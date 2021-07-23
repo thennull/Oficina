@@ -4,6 +4,7 @@
   "description": "Uma API simples para registro de veiculos e proprietarios",
   "main": "server.js",
   "scripts": {
+    "test": "echo 'Ready to RUN'",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
