@@ -1,0 +1,272 @@
+[
+  {
+    "marca": "Bmw",
+    "modelo": "enim Turbo",
+    "motor": "{versao: 1.8, fuel: gasolina}",
+    "ano": 2015,
+    "cor": "preto",
+    "placa": "HLJ-4638",
+    "cadastro": "2020-06-14",
+    "KM": 96743,
+    "client": "60facd63fd8b9de4659482ca",
+    "OS": [
+      "d1901902-a273-450a-b7d8-59b0307e2dcf",
+      "809a47c2-203b-429a-9752-34293d7a9ca8",
+      "527334b0-888a-496a-ad28-77137e284196",
+      "ab53def0-5b49-47c0-ba10-e11cc4f1105e",
+      "e024121f-dded-428f-b4ed-4879ae758f25"
+    ]
+  },
+  {
+    "marca": "Chevrolet",
+    "modelo": "esse Turbo",
+    "motor": "{versao: 2.0, fuel: gasolina}",
+    "ano": 2017,
+    "cor": "verde",
+    "placa": "HLJ-4638",
+    "cadastro": "2017-06-21",
+    "KM": 48581,
+    "client": "60facd63e6adbfb9ec152480",
+    "OS": [
+      "21af6100-f7ac-4267-8b5c-88946b6a2a7b",
+      "bc5d63ee-032c-4161-8253-8903a10677d1",
+      "56f36bcb-663a-4f0e-a028-d25764d9d6d6",
+      "75e12fea-533a-4cc2-9072-09cea934cb8e",
+      "bb9aac85-fb0a-496e-9668-5a1b4eff153a"
+    ]
+  },
+  {
+    "marca": "Ford",
+    "modelo": "laborum Turbo",
+    "motor": "{versao: 1.5, fuel: gasolina}",
+    "ano": 2021,
+    "cor": "preto",
+    "placa": "HLJ-4638",
+    "cadastro": "2016-03-21",
+    "KM": 29666,
+    "client": "60facd63fb2784a6005bcf52",
+    "OS": [
+      "9a546a2d-0057-4746-9cac-20b514d1b5fa",
+      "ec494954-32fc-4406-b84a-5e0d2e42246b",
+      "bbe2552c-a917-4701-840f-5baabca12712",
+      "0a17e2e5-75f7-4d18-bba1-967c2733edde",
+      "db7f2ae6-536e-44ac-99d2-d85c4814af2e"
+    ]
+  },
+  {
+    "marca": "Toyota",
+    "modelo": "tempor Turbo",
+    "motor": "{versao: 2.0, fuel: gasolina}",
+    "ano": 2020,
+    "cor": "azul",
+    "placa": "HLJ-4638",
+    "cadastro": "2015-12-27",
+    "KM": 51150,
+    "client": "60facd635da819f4aa33dff3",
+    "OS": [
+      "e9b2d161-d8ef-4edb-9ca6-5785057de0f5",
+      "24e031ce-c8ab-4700-b852-f45aa0bd67d1",
+      "0f7f0ab9-f325-4c34-a7db-db39472d4944",
+      "b4479c73-a645-407b-8ab3-eaec5daef7cd",
+      "dad79b3a-49b9-4890-b29c-e4df7ec5bea7"
+    ]
+  },
+  {
+    "marca": "Honda",
+    "modelo": "excepteur Turbo",
+    "motor": "{versao: 2.0, fuel: gasolina}",
+    "ano": 2020,
+    "cor": "verde",
+    "placa": "HLJ-4638",
+    "cadastro": "2019-12-27",
+    "KM": 85256,
+    "client": "60facd63fb2784a6005bcf52",
+    "OS": [
+      "0f8e3a2e-7ff5-4d9b-8a69-a00686139c77",
+      "9bf79811-b451-4cd1-9d10-69ee5277accc",
+      "d0c0f3e1-8ea3-46e4-9060-7fdeafc720a4",
+      "c43541ba-7af2-4848-8326-de52bfb9d97c",
+      "0511f06f-8367-44aa-99e1-c95ef90f1e99"
+    ]
+  },
+  {
+    "marca": "Renault",
+    "modelo": "aute Turbo",
+    "motor": "{versao: 1.6, fuel: flex}",
+    "ano": 2019,
+    "cor": "preto",
+    "placa": "HLJ-4638",
+    "cadastro": "2021-05-26",
+    "KM": 13590,
+    "client": "60facd63e6adbfb9ec152480",
+    "OS": [
+      "be62bb7e-2354-46dd-866d-ea39b896cd28",
+      "94a16cfd-1496-45da-b616-96a7a05e2778",
+      "cadd68ec-0beb-4ed9-8df8-c60957b9fe5a",
+      "88ca072b-4d2d-4504-bbe0-dfd31e619ea5",
+      "803b3e17-77cc-47c8-8210-8f6e835d3275"
+    ]
+  },
+  {
+    "marca": "Mitsubishi",
+    "modelo": "excepteur Turbo",
+    "motor": "{versao: 1.8, fuel: gasolina}",
+    "ano": 2014,
+    "cor": "vermelho",
+    "placa": "HLJ-4638",
+    "cadastro": "2015-01-26",
+    "KM": 95538,
+    "client": "60facd63c66ada6cd3560875",
+    "OS": [
+      "64c4b8c5-1df8-4638-a570-0d9694481f4d",
+      "68208efa-7d81-4a1d-9ad3-4e93b43a7071",
+      "71599b94-94ee-4b1b-9670-640a4c89c517",
+      "408cd1b0-010e-4a76-a344-50e7ee29d54f",
+      "4715749f-70a2-40b1-87b7-cd2a372f8f62"
+    ]
+  },
+  {
+    "marca": "Renault",
+    "modelo": "ullamco Turbo",
+    "motor": "{versao: 1.8, fuel: gasolina}",
+    "ano": 2014,
+    "cor": "branco",
+    "placa": "HLJ-4638",
+    "cadastro": "2016-10-03",
+    "KM": 42261,
+    "client": "60facd631ffa9f98a48fd4c9",
+    "OS": [
+      "f3544138-023c-4e4c-b522-85df2d4c2899",
+      "60d2a3a4-7f60-49a8-b090-8e8600c6e62a",
+      "4a00be1e-4b18-4e48-9c37-86dec24738fd",
+      "f03d20a2-e059-48e1-8de3-d4c790792321",
+      "7028a8cb-8104-4c52-bd26-2913277d863f"
+    ]
+  },
+  {
+    "marca": "Fiat",
+    "modelo": "duis Turbo",
+    "motor": "{versao: 1.5, fuel: flex}",
+    "ano": 2020,
+    "cor": "preto",
+    "placa": "HLJ-4638",
+    "cadastro": "2018-09-12",
+    "KM": 60728,
+    "client": "60facd63eb873921a98e4dcd",
+    "OS": [
+      "e808b91b-a1d9-4ee3-8c87-8488db3e5088",
+      "b56b6ce3-8994-436f-ad1f-d2f66d23abae",
+      "fddc851f-ff57-4213-a91c-580aee1bb6c3",
+      "2f6a304c-5660-4863-bafe-b8ab4cfaedc2",
+      "3db9a300-d8de-40bb-b844-378e69043f32"
+    ]
+  },
+  {
+    "marca": "Bmw",
+    "modelo": "ex Turbo",
+    "motor": "{versao: 2.0, fuel: gasolina}",
+    "ano": 2016,
+    "cor": "verde",
+    "placa": "HLJ-4638",
+    "cadastro": "2015-07-29",
+    "KM": 28751,
+    "client": "60facd63fb2784a6005bcf52",
+    "OS": [
+      "648390e2-a71c-49f0-9624-2ebc3c0bc65a",
+      "7fd93a51-cf63-4654-83fc-56a8266616ce",
+      "0b7745e4-de90-453e-82ac-c4e62e48ec8f",
+      "49fd435b-bc45-4d87-b4be-a4c791ad2949",
+      "aaddd2d0-9454-46f5-84f8-dad50ff57926"
+    ]
+  },
+  {
+    "marca": "Bmw",
+    "modelo": "amet Turbo",
+    "motor": "{versao: 1.5, fuel: flex}",
+    "ano": 2015,
+    "cor": "azul",
+    "placa": "HLJ-4638",
+    "cadastro": "2020-02-11",
+    "KM": 73743,
+    "client": "60facd631ff728b11b282f93",
+    "OS": [
+      "c8265d78-f901-48ca-91e9-98d73efed114",
+      "f6d77221-9153-417d-bcab-9a91817cca80",
+      "3307ed21-698b-4190-a32b-da7c6dc31b8b",
+      "152d1f7a-a449-4475-9c74-a00e309096d8",
+      "7a893504-13c9-4e5b-9adf-3940ce9dbc5e"
+    ]
+  },
+  {
+    "marca": "Fiat",
+    "modelo": "anim Turbo",
+    "motor": "{versao: 2.0, fuel: flex}",
+    "ano": 2018,
+    "cor": "azul",
+    "placa": "HLJ-4638",
+    "cadastro": "2020-09-22",
+    "KM": 37653,
+    "client": "60facd63a265f7feb2938cc9",
+    "OS": [
+      "3f46c184-624a-4c87-98f4-acc7f192fee0",
+      "d6cddb5a-7fe0-4ece-95a2-c48a3efe0cac",
+      "a1029c53-df7b-4044-b8e5-ec51c053eba7",
+      "47d5ce04-5842-4712-b00c-dca6c9d9164d",
+      "e612d29e-55d3-42a3-80c1-10d455b69188"
+    ]
+  },
+  {
+    "marca": "Audi",
+    "modelo": "aliquip Turbo",
+    "motor": "{versao: 1.2, fuel: flex}",
+    "ano": 2017,
+    "cor": "azul",
+    "placa": "HLJ-4638",
+    "cadastro": "2014-09-09",
+    "KM": 86637,
+    "client": "60facd63fb2784a6005bcf52",
+    "OS": [
+      "a0808a7f-9cbd-46ab-8135-012a96be0aab",
+      "69ffef17-113e-4e50-abd9-34ef6b96dd49",
+      "41947c41-90e1-4ca0-84f3-610a9d598279",
+      "4bcd22db-0b8e-472b-a30a-8b0ca3334f3a",
+      "2da41612-e0df-4789-aa1d-2c7cc20c0be7"
+    ]
+  },
+  {
+    "marca": "Renault",
+    "modelo": "occaecat Turbo",
+    "motor": "{versao: 1.0, fuel: flex}",
+    "ano": 2021,
+    "cor": "preto",
+    "placa": "HLJ-4638",
+    "cadastro": "2016-07-30",
+    "KM": 7723,
+    "client": "60facd6341e29e15bf8d5925",
+    "OS": [
+      "2f498c8b-2abe-4da2-9668-cf036ed1f71a",
+      "7bf1e43f-55d1-4854-b41a-b78e5819e0f8",
+      "0ebdf368-99de-4cfd-a719-bc5cd2511c35",
+      "0931dada-10c3-41be-a68a-59511d2a8d29",
+      "31aed8e4-4f97-4e92-8ae7-cb8fe36c6f1f"
+    ]
+  },
+  {
+    "marca": "Ford",
+    "modelo": "deserunt Turbo",
+    "motor": "{versao: 1.8, fuel: flex}",
+    "ano": 2020,
+    "cor": "vermelho",
+    "placa": "HLJ-4638",
+    "cadastro": "2019-09-15",
+    "KM": 96593,
+    "client": "60facd63095338a5b825c046",
+    "OS": [
+      "3bbd78f3-6f2f-45f5-bcf8-3e3f0a74c9cf",
+      "cf947ef5-ce1a-4104-87e9-3939e840365e",
+      "8a2e93ef-6200-4a76-8112-e318ce5a60d6",
+      "aea2a7e9-b646-4ea3-9c7f-907d9dcce1fb",
+      "9925088c-33d0-44e3-930a-22c52bd9bf34"
+    ]
+  }
+]

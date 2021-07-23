@@ -56,6 +56,7 @@ var UserSchema = new mongoose.Schema({
     type: String,
     required: [true, "Insira um numero de telefone"],
   },
+  gender: String,
   resetPwd: {
     type: String,
   },
@@ -77,7 +78,7 @@ UserSchema.pre("save", async function (next) {
   if (!this.isModified("password")) next();
 
   let salt = await bcrypt.genSalt(10);
-  this.password = bcrypt.hash(this.password, salt);
+  this.password = await bcrypt.hash(this.password, salt);
   next();
 });
 

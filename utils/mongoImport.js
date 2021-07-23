@@ -1,4 +1,5 @@
 const User = require("../models/users");
+const Carro = require("../models/carros");
 const dotenv = require("dotenv");
 const database = require("../middlewares/database");
 const path = require("path");
@@ -15,6 +16,7 @@ database();
 
 var models = {
   "users.json": User,
+  "carros.json": Carro,
 };
 
 // Load path

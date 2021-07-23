@@ -17,6 +17,10 @@ var ManutSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  OS: {
+    type: String,
+    required: [true, "Insira um numero de OS"],
+  },
 });
 
 ManutSchema.statics.updateTotal = async function (servId, prodId) {

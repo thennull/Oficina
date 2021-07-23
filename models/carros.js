@@ -7,15 +7,15 @@ var CarroSchema = new mongoose.Schema({
   },
   modelo: {
     type: String,
-    motor: {
-      versao: {
-        type: String,
-      },
-      comb: {
-        type: String,
-      },
-    },
     required: [true, "Insira um modelo"],
+  },
+  motor: {
+    versao: {
+      type: String,
+    },
+    fuel: {
+      type: String,
+    },
   },
   ano: {
     type: Date,
@@ -28,7 +28,7 @@ var CarroSchema = new mongoose.Schema({
     type: String,
     required: [true, "Insira a placa do veículo"],
   },
-  visita: {
+  cadastro: {
     type: Date,
     required: [true, "Insira a data da visita"],
   },
@@ -36,16 +36,16 @@ var CarroSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  user: {
+  client: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
     required: true,
   },
   KM: {
-    type: String,
+    type: Number,
     required: [true, "Insira um valor de KM"],
   },
-  OS: [Number],
+  OS: [String],
 });
 
 module.exports = mongoose.model("Carro", CarroSchema);
