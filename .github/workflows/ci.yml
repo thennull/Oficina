@@ -12,12 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ${{matrix.os}}
-    strategy:
-      matrix:
-        node-version: [14.x]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -31,6 +26,7 @@ jobs:
     - name: Build and Push to a Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
+        tag: Oficina
         image: thennull/oficina_v1
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
