@@ -13,7 +13,7 @@ var ProdutoSchema = new mongoose.Schema({
     type: String,
     maxLength: 20,
   },
-  price: {
+  valor: {
     type: Number,
     required: [true, "Insira o valor do produto"],
   },

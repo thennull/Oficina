@@ -12,67 +12,73 @@ var geocoder = nodeGeocoder({
   formatter: null,
 });
 
-var UserSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Insire um nome"],
-  },
-  email: {
-    type: String,
-    required: [true, "Insira um email"],
-    unique: true,
-    match: [
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      "Insira um email valido",
-    ],
-  },
-  password: {
-    type: String,
-    required: [true, "Insira um password"],
-    minLength: 6,
-    select: false,
-  },
-  address: {
-    type: String,
-    required: [true, "Insira um endereço"],
-  },
-  location: {
-    type: {
+var UserSchema = new mongoose.Schema(
+  {
+    name: {
       type: String,
-      enum: ["Point"],
+      required: [true, "Insire um nome"],
     },
-    coordinates: {
-      type: [Number],
-      index: "2dsphere",
+    email: {
+      type: String,
+      required: [true, "Insira um email"],
+      unique: true,
+      match: [
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+        "Insira um email valido",
+      ],
     },
-    formattedAddress: String,
-    street: String,
-    city: String,
-    state: String,
-    zipcode: String,
-    country: String,
+    password: {
+      type: String,
+      required: [true, "Insira um password"],
+      minLength: 6,
+      select: false,
+    },
+    address: {
+      type: String,
+      required: [true, "Insira um endereço"],
+    },
+    location: {
+      type: {
+        type: String,
+        enum: ["Point"],
+      },
+      coordinates: {
+        type: [Number],
+        index: "2dsphere",
+      },
+      formattedAddress: String,
+      street: String,
+      city: String,
+      state: String,
+      zipcode: String,
+      country: String,
+    },
+    phone: {
+      type: String,
+      required: [true, "Insira um numero de telefone"],
+    },
+    gender: String,
+    resetPwd: {
+      type: String,
+    },
+    resetPwdExpire: {
+      type: Date,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+    role: {
+      type: String,
+      enum: ["usuario", "client"],
+      default: "usuario",
+    },
   },
-  phone: {
-    type: String,
-    required: [true, "Insira um numero de telefone"],
-  },
-  gender: String,
-  resetPwd: {
-    type: String,
-  },
-  resetPwdExpire: {
-    type: Date,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  role: {
-    type: String,
-    enum: ["usuario", "client"],
-    default: "usuario",
-  },
-});
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
+);
 
 UserSchema.pre("save", async function (next) {
   if (!this.isModified("password")) next();
@@ -116,6 +122,13 @@ UserSchema.pre("save", async function (next) {
 
   this.address = null;
   next();
+});
+
+UserSchema.virtual("carros", {
+  ref: "Carro",
+  localField: "_id",
+  foreignField: "client",
+  justOne: false,
 });
 
 module.exports = mongoose.model("User", UserSchema);
