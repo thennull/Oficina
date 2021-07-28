@@ -8,7 +8,7 @@ exports.getUsers = asyncHandler(async function (req, res, next) {
     query = req.run;
 
   if ("extra" in query) {
-    var { select = "", sort = "" } = query["extra"];
+    var { select = "", sort = "", limit = 100, page = 1 } = query["extra"];
     delete query["extra"];
   }
 
@@ -22,6 +22,19 @@ exports.getUsers = asyncHandler(async function (req, res, next) {
     select: "marca modelo",
   });
 
+  (limit = Number.parseInt(limit)), (page = Number.parseInt(page));
+
+  query.limit(limit);
+  let totalDoc = await User.countDocuments().exec();
+  let pagination = {
+    limit,
+    page,
+    next: (page + 1) * limit <= totalDoc ? page + 1 : "",
+    prev: page - 1 > 0 ? page - 1 : "",
+  };
+
+  query.skip((page - 1) * limit);
+
   users = await query.exec();
 
   if (!users)
@@ -32,6 +45,7 @@ exports.getUsers = asyncHandler(async function (req, res, next) {
   res.status(200).json({
     success: true,
     count: users.length,
+    pagination,
     data: users,
   });
 });
