@@ -3,6 +3,10 @@ const Carro = require("../models/carros");
 const ErrorResponse = require("../utils/ErrorResponse");
 const { asyncHandler } = require("../utils/asyncHandler");
 
+// Desc fetch all users
+// Method GET
+// Access Public
+
 exports.getUsers = asyncHandler(async function (req, res, next) {
   let users = undefined,
     query = req.run;
@@ -47,5 +51,87 @@ exports.getUsers = asyncHandler(async function (req, res, next) {
     count: users.length,
     pagination,
     data: users,
+  });
+});
+
+// Desc create a user
+// Method POST
+// Access Private
+
+exports.postUser = asyncHandler(async function (req, res, next) {
+  let user = await User.create(req.body);
+
+  if (!user) {
+    return next(new ErrorResponse(`Could not create that user.`, null, 400));
+  }
+
+  res.status(200).json({
+    success: true,
+    data: {
+      user: user.name,
+      email: user.email,
+    },
+  });
+});
+
+// Desc Fetch one user by ID
+// Method GET
+// Access Public
+
+exports.getOneUser = asyncHandler(async function (req, res, next) {
+  let id = req.params.userId;
+  if (id.match(/^[0-9a-fA-F]{24}$/)) {
+    var user = await User.findOne({ _id: id }).exec();
+    if (!user) {
+      return next(
+        new ErrorResponse("Could not find any user with ID: " + id, null, 404)
+      );
+    }
+    res.status(200).json({
+      success: true,
+      data: user,
+    });
+  } else {
+    return next(new ErrorResponse(`Invlaid ID: ${id}`, null, 400));
+  }
+});
+
+// Desc Update a user by ID
+// Method PUT
+// Access Private
+
+exports.updateUser = asyncHandler(async function (req, res, next) {
+  let id = req.params.userId;
+  if (!id.match(/^[0-9a-fA-F]{24}$/))
+    return next(ErrorResponse(`Invalid ID: ${id}`, null, 400));
+  let user = await User.findOneAndUpdate({ _id: id }, req.body, {
+    new: true,
+  }).exec();
+
+  if (!user)
+    return next(ErrorResponse(`could not update user: ${id}`, null, 500));
+
+  res.status(200).json({
+    success: true,
+    data: user,
+  });
+});
+
+// Desc Delete a user by ID
+// Method Delete
+// Access Private
+
+exports.deleteUser = asyncHandler(async function (req, res, next) {
+  let id = req.params.userId;
+  if (!id.match(/^[0-9a-fA-F]{24}$/))
+    return next(ErrorResponse(`Invalid ID: ${id}`, null, 400));
+
+  let user = await User.findByIdAndDelete(id).exec();
+  if (!user)
+    return next(ErrorResponse(`could not update user: ${id}`, null, 500));
+
+  res.status(200).json({
+    success: true,
+    data: {},
   });
 });

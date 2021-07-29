@@ -71,7 +71,7 @@ var UserSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: ["usuario", "client"],
-      default: "usuario",
+      default: "client",
     },
   },
   {
