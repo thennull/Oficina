@@ -11,6 +11,7 @@ const {
   getResetLink,
   putPassword,
   userLogin,
+  userLogoff,
 } = require("../controllers/users");
 
 // Routes
@@ -31,6 +32,8 @@ router.route("/:userId/resetpassword").get(getResetLink);
 
 router.route("/:userId/:key").put(privateRoute, putPassword);
 
-router.route("/login").post(userLogin);
+router.route("/user/login").post(userLogin);
+
+router.route("/user/logoff").get(privateRoute, userLogoff);
 
 module.exports = router;

@@ -3,6 +3,7 @@ const Carro = require("../models/carros");
 const ErrorResponse = require("../utils/ErrorResponse");
 const { asyncHandler } = require("../utils/asyncHandler");
 const crypto = require("crypto");
+const { token } = require("morgan");
 
 // Desc fetch all users
 // Method GET
@@ -81,8 +82,9 @@ exports.postUser = asyncHandler(async function (req, res, next) {
 
 exports.getOneUser = asyncHandler(async function (req, res, next) {
   let id = req.params.userId;
+  console.log("ERWENERNENYEJNRETN");
   if (id.match(/^[0-9a-fA-F]{24}$/)) {
-    var user = await User.findOne({ _id: id }).exec();
+    var user = await User.findOne({ _id: id }).lean().exec();
     if (!user) {
       return next(
         new ErrorResponse("Could not find any user with ID: " + id, null, 404)
@@ -107,7 +109,9 @@ exports.updateUser = asyncHandler(async function (req, res, next) {
     return next(ErrorResponse(`Invalid ID: ${id}`, null, 400));
   let user = await User.findOneAndUpdate({ _id: id }, req.body, {
     new: true,
-  }).exec();
+  })
+    .lean()
+    .exec();
 
   if (!user)
     return next(ErrorResponse(`could not update user: ${id}`, null, 500));
@@ -194,7 +198,7 @@ exports.putPassword = asyncHandler(async function (req, res, next) {
 
   await user.save();
 
-  res.status(200).cookie(resetToken, null, { httpOnly: true }).json({
+  res.status(200).cookie("resetToken", null, { httpOnly: true }).json({
     success: true,
     data: {},
   });
@@ -218,6 +222,22 @@ exports.userLogin = asyncHandler(async function (req, res, next) {
       success: true,
       data: {
         logged: true,
+      },
+    });
+});
+
+// Desc Logoff a user
+// Method GET
+// Access Pirvate
+
+exports.userLogoff = asyncHandler(async function (req, res, next) {
+  res
+    .status(200)
+    .cookie("token", "", { httpOnly: true })
+    .json({
+      success: true,
+      data: {
+        logoff: true,
       },
     });
 });
