@@ -14,5 +14,7 @@ exports.privateRoute = asyncHandler(async function (req, res, next) {
 
   jwt.verify(tokenKey, process.env.JWT_SECRET);
 
+  req.user = jwt.decode(tokenKey)["id"];
+
   next();
 });
