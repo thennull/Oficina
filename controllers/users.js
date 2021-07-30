@@ -39,7 +39,7 @@ exports.getUsers = asyncHandler(async function (req, res, next) {
 
   query.skip((page - 1) * limit);
 
-  users = await query.exec();
+  users = await query.lean().exec();
 
   if (!users)
     return next(
@@ -128,10 +128,35 @@ exports.deleteUser = asyncHandler(async function (req, res, next) {
 
   let user = await User.findByIdAndDelete(id).exec();
   if (!user)
-    return next(ErrorResponse(`could not update user: ${id}`, null, 500));
+    return next(ErrorResponse(`could not update user: ${id}`, null, 404));
 
   res.status(200).json({
     success: true,
     data: {},
   });
+});
+
+// Desc Request a password reset
+// Method GET
+// Access Public
+
+exports.getResetLink = asyncHandler(async function (req, res, next) {
+  let id = req.params.userId;
+  if (!id.match(/^[0-9a-fA-F]{24}$/))
+    return next(ErrorResponse(`Invalid ID: ${id}`, null, 400));
+  let user = await User.findOne({ _id: id }).exec();
+  if (!user)
+    return next(ErrorResponse(`could not update user: ${id}`, null, 404));
+  let key = user.resetPasswd();
+  let token = user.signJWT("600s");
+  await user.save();
+  res
+    .status(200)
+    .cookie("resetToken", token, { httpOnly: true })
+    .json({
+      success: true,
+      data: {
+        link: `${process.env.SERVER}:3000/api/v1/users/newpassword/${key}`,
+      },
+    });
 });

@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const nodeGeocoder = require("node-geocoder");
+const crypto = require("crypto");
 
 // Model setup
 
@@ -35,7 +36,7 @@ var UserSchema = new mongoose.Schema(
     },
     address: {
       type: String,
-      required: [true, "Insira um endereço"],
+      required: true,
     },
     location: {
       type: {
@@ -88,9 +89,9 @@ UserSchema.pre("save", async function (next) {
   next();
 });
 
-UserSchema.methods.signJWT = function () {
-  return jwt.sign({ id: this._id }, proccess.env.JWT_SECRET, {
-    expiresIn: proccess.env.JWT_EXPIRE,
+UserSchema.methods.signJWT = function (expire = null) {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+    expiresIn: expire || process.env.JWT_EXPIRE,
   });
 };
 
@@ -100,7 +101,7 @@ UserSchema.methods.validatePasswd = async function (password) {
 
 UserSchema.methods.resetPasswd = function () {
   let key = crypto.randomBytes(30).toString("hex");
-  this.resetPasswd = crypto.createHash("sha256").update(key).digest("hex");
+  this.resetPwd = crypto.createHash("sha256").update(key).digest("hex");
   this.resetPwdExpire = Date.now() + 600000;
   return key;
 };
@@ -119,8 +120,6 @@ UserSchema.pre("save", async function (next) {
     zipcode: loc.zipcode,
     country: loc.countryCode,
   };
-
-  this.address = null;
   next();
 });
 
