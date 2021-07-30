@@ -38,7 +38,7 @@
   <h3 align="center">Oficina</h3>
 
   <p align="center">
-    Ainda en construção - Um modelo para uma oficina baseado em: Express, mongoDB, node.JS, Geocode location. Dados gerados com JSON generator tool. Build final no DockerHub.
+    Under Development! Waiting for updates....
     <br />
     <br />
     <a href="https://github.com/thennull/Oficina"><strong>Explore the docs »</strong></a>
@@ -86,8 +86,7 @@
 ## About The Project
 
 
-Um modelo para uma oficina baseado em: Express, mongoDB, node.JS, Geocode location. Dados gerados com JSON generator tool. Build final no DockerHub.
-
+Under Development! Waiting for updates....
 <!-- GETTING STARTED -->
 ## Getting Started
 
