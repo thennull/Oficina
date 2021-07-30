@@ -114,7 +114,7 @@ UserSchema.methods.resetPasswd = function () {
 };
 
 UserSchema.pre("save", async function (next) {
-  // Format to query: 'Rua Gameleira 83, Itabira, Minas Gerais 35901, BR'
+  // Format to query: 'Rua Santinho Linhares 159, Itabira, Minas Gerais 35901, BR'
   let loc = await geocoder.geocode(this.address);
   loc = loc[0];
   this.location = {

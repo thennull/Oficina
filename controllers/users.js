@@ -194,8 +194,30 @@ exports.putPassword = asyncHandler(async function (req, res, next) {
 
   await user.save();
 
-  res.status(200).json({
+  res.status(200).cookie(resetToken, null, { httpOnly: true }).json({
     success: true,
     data: {},
   });
+});
+
+// Desc Login a user
+// Method POST
+// Access Public
+
+exports.userLogin = asyncHandler(async function (req, res, next) {
+  let { email, password } = req.body;
+  let user = await User.findOne({ email: email }).select("+password").exec();
+  if (!user)
+    return next(new ErrorResponse(`User not found: ${email}`, null, 404));
+  if (!(await user.validatePasswd(password)))
+    return next(new ErrorResponse(`User not authorized: ${email}`, null, 401));
+  res
+    .status(200)
+    .cookie("token", user.signJWT("24h"), { httpOnly: true })
+    .json({
+      success: true,
+      data: {
+        logged: true,
+      },
+    });
 });
