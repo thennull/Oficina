@@ -160,3 +160,9 @@ exports.getResetLink = asyncHandler(async function (req, res, next) {
       },
     });
 });
+
+// Desc Update user's password
+// Method PUT
+// Access Private
+
+exports.putPassword = asyncHandler();

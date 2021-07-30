@@ -1,5 +1,6 @@
 const express = require("express");
 const { filterResults } = require("../middlewares/advancedFilter");
+const { privateRoute } = require("../middlewares/protectRoutes");
 const {
   getUsers,
   postUser,
@@ -12,7 +13,7 @@ const {
 // Routes
 var router = express.Router();
 
-router.route("/").get(filterResults, getUsers).post(postUser);
+router.route("/").get(privateRoute, filterResults, getUsers).post(postUser);
 
 router.route("/:userId").get(getOneUser).put(updateUser).delete(deleteUser);
 
