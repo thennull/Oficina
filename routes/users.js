@@ -8,15 +8,18 @@ const {
   updateUser,
   deleteUser,
   getResetLink,
+  putPassword,
 } = require("../controllers/users");
 
 // Routes
 var router = express.Router();
 
-router.route("/").get(privateRoute, filterResults, getUsers).post(postUser);
+router.route("/").get(filterResults, getUsers).post(postUser);
 
 router.route("/:userId").get(getOneUser).put(updateUser).delete(deleteUser);
 
 router.route("/:userId/resetpassword").get(getResetLink);
+
+router.route("/:userId/:key").put(privateRoute, putPassword);
 
 module.exports = router;

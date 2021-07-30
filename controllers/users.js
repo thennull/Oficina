@@ -2,6 +2,7 @@ const User = require("../models/users");
 const Carro = require("../models/carros");
 const ErrorResponse = require("../utils/ErrorResponse");
 const { asyncHandler } = require("../utils/asyncHandler");
+const crypto = require("crypto");
 
 // Desc fetch all users
 // Method GET
@@ -156,7 +157,7 @@ exports.getResetLink = asyncHandler(async function (req, res, next) {
     .json({
       success: true,
       data: {
-        link: `${process.env.SERVER}:3000/api/v1/users/newpassword/${key}`,
+        link: `${process.env.SERVER}:3000/api/v1/users/${id}/${key}`,
       },
     });
 });
@@ -165,4 +166,36 @@ exports.getResetLink = asyncHandler(async function (req, res, next) {
 // Method PUT
 // Access Private
 
-exports.putPassword = asyncHandler();
+exports.putPassword = asyncHandler(async function (req, res, next) {
+  let id = req.params.userId,
+    key = req.params.key,
+    { password } = req.body;
+
+  if (!id.match(/^[0-9a-fA-F]{24}$/))
+    return next(new ErrorResponse(`ID: ${id} is invalid`, null, 400));
+
+  let user = await User.findOne({ _id: id }).select("+password").exec();
+
+  if (!user)
+    return next(new ErrorResponse(`Could not find ID: ${id}`, null, 404));
+
+  if (user.resetPwdExpire < Date.now()) {
+    return next(new ErrorResponse(`Access expired for: ${id}`, null, 401));
+  }
+
+  let counterTest = crypto.createHash("sha256").update(key).digest("hex");
+
+  if (counterTest != user.resetPwd)
+    return next(new ErrorResponse(`Invalid access for: ${id}`, null, 401));
+
+  user.password = password;
+
+  (user.resetPwd = ""), (user.resetPwdExpire = "");
+
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    data: {},
+  });
+});

@@ -22,7 +22,6 @@ var UserSchema = new mongoose.Schema(
     email: {
       type: String,
       required: [true, "Insira um email"],
-      unique: true,
       match: [
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
         "Insira um email valido",
@@ -79,6 +78,14 @@ var UserSchema = new mongoose.Schema(
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
   }
+);
+
+UserSchema.index(
+  {
+    name: 1,
+    email: 1,
+  },
+  { unique: true }
 );
 
 UserSchema.pre("save", async function (next) {

@@ -10,8 +10,7 @@ exports.privateRoute = asyncHandler(async function (req, res, next) {
   } else {
     tokenKey = req.cookies.token || req.cookies.resetToken;
   }
-  if (!tokenKey)
-    return next(new ErrorResponse(`Invalid access token`, null, 401));
+  if (!tokenKey) return next(new ErrorResponse(`Invalid access!`, null, 401));
 
   jwt.verify(tokenKey, process.env.JWT_SECRET);
 
