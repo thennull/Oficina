@@ -1,4 +1,6 @@
-exports.filterResults = async function (req, res, next) {
+const { asyncHandler } = require("../utils/asyncHandler");
+
+exports.filterResults = asyncHandler(async function (req, res, next) {
   var query = undefined,
     run = undefined,
     extra = {};
@@ -24,4 +26,4 @@ exports.filterResults = async function (req, res, next) {
 
   req["run"] = run;
   next();
-};
+});
