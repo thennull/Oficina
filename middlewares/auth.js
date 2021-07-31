@@ -6,11 +6,7 @@ exports.authorize = function (role) {
   return asyncHandler(async function (req, res, next) {
     if (!req.user)
       return next(
-        new ErrorResponse(
-          "Not authorized to access this route - (Authentication)",
-          null,
-          401
-        )
+        new ErrorResponse("Not authenticated to access this route", null, 401)
       );
     let user = await User.findOne({ _id: req.params.userId }).exec();
 
@@ -23,11 +19,7 @@ exports.authorize = function (role) {
 
     if (!role.includes(authRole))
       return next(
-        new ErrorResponse(
-          "Not authorized to access this route - (Authorization)",
-          null,
-          401
-        )
+        new ErrorResponse("Not authorized to access this route", null, 401)
       );
 
     if (
@@ -39,9 +31,7 @@ exports.authorize = function (role) {
     } else if (authRole == "admin") {
       return next();
     } else {
-      return next(
-        new ErrorResponse("Not authorized to access this route", null, 401)
-      );
+      return next(new ErrorResponse("No access to this route", null, 401));
     }
   });
 };
