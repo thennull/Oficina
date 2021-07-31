@@ -82,7 +82,7 @@ exports.postUser = asyncHandler(async function (req, res, next) {
 
 exports.getOneUser = asyncHandler(async function (req, res, next) {
   let id = req.params.userId;
-  console.log("ERWENERNENYEJNRETN");
+
   if (id.match(/^[0-9a-fA-F]{24}$/)) {
     var user = await User.findOne({ _id: id }).lean().exec();
     if (!user) {

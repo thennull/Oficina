@@ -15,7 +15,6 @@ exports.authorize = function (role) {
       .select("role")
       .lean()
       .exec();
-    console.log(authRole);
 
     if (!role.includes(authRole))
       return next(

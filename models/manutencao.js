@@ -1,13 +1,22 @@
 const mongoose = require("mongoose");
+const uuid = require("uuid");
 
 var ManutSchema = new mongoose.Schema({
-  servicos: [
-    { type: mongoose.Schema.ObjectId, ref: "Servico", required: true },
-  ],
-  produtos: [{ type: mongoose.Schema.ObjectId, ref: "Produto" }],
+  services: [{ type: mongoose.Schema.ObjectId }],
+  products: [{ type: mongoose.Schema.ObjectId }],
   status: {
     type: String,
     required: [true, "Insira um status para a OS"],
+  },
+  client: {
+    type: mongoose.Schema.ObjectId,
+    ref: "User",
+    required: [true, "Insira um nome de cliente"],
+  },
+  employee: {
+    type: mongoose.Schema.ObjectId,
+    ref: "User",
+    required: [true, "Insira um nome de funcionario"],
   },
   createdAt: {
     type: Date,
@@ -15,12 +24,21 @@ var ManutSchema = new mongoose.Schema({
   },
   total: {
     type: Number,
-    required: true,
   },
   OS: {
     type: String,
-    required: [true, "Insira um numero de OS"],
+    required: true,
+    unique: true,
   },
+});
+
+ManutSchema.pre("save", function (next) {
+  if (!this.OS) {
+    this.OS = uuid.v4();
+    next();
+  } else {
+    next();
+  }
 });
 
 ManutSchema.statics.updateTotal = async function (servId, prodId) {
