@@ -17,10 +17,7 @@ const {
 // Routes
 var router = express.Router();
 
-router
-  .route("/")
-  .get(filterResults, getUsers)
-  .post(privateRoute, authorize(["admin"]), postUser);
+router.route("/").get(filterResults, getUsers).post(postUser);
 
 router
   .route("/:userId")

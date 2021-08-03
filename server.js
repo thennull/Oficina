@@ -12,7 +12,8 @@ const hpp = require("hpp");
 const cors = require("cors");
 const database = require("./middlewares/database");
 const { errorDefault } = require("./middlewares/errorHandler");
-const userRoute = require("./routes/users");
+const userRoutes = require("./routes/users");
+const carroRoutes = require("./routes/carros");
 
 // Environment
 
@@ -56,7 +57,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 
-app.use("/api/v1/users", userRoute);
+app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/carros", carroRoutes);
 
 // Default Error handler
 

@@ -27,6 +27,7 @@ var CarroSchema = new mongoose.Schema({
   placa: {
     type: String,
     required: [true, "Insira a placa do veículo"],
+    unique: true,
   },
   cadastro: {
     type: Date,

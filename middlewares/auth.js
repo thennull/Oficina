@@ -22,7 +22,7 @@ exports.authorize = function (role) {
       );
 
     if (
-      role == "usuario" &&
+      authRole == "usuario" &&
       req.params.userId == user.id.toString() &&
       req.method == "PUT"
     ) {

@@ -2,7 +2,7 @@
   {
     "marca": "Bmw",
     "modelo": "enim Turbo",
-    "motor": "{versao: 1.8, fuel: gasolina}",
+    "motor": { "versao": 1.8, "fuel": "gasolina" },
     "ano": 2015,
     "cor": "preto",
     "placa": "HLJ-4638",
@@ -20,7 +20,7 @@
   {
     "marca": "Chevrolet",
     "modelo": "esse Turbo",
-    "motor": "{versao: 2.0, fuel: gasolina}",
+    "motor": { "versao": 2.0, "fuel": "gasolina" },
     "ano": 2017,
     "cor": "verde",
     "placa": "HLJ-4638",
@@ -38,7 +38,7 @@
   {
     "marca": "Ford",
     "modelo": "laborum Turbo",
-    "motor": "{versao: 1.5, fuel: gasolina}",
+    "motor": { "versao": 1.5, "fuel": "gasolina" },
     "ano": 2021,
     "cor": "preto",
     "placa": "HLJ-4638",
@@ -56,7 +56,7 @@
   {
     "marca": "Toyota",
     "modelo": "tempor Turbo",
-    "motor": "{versao: 2.0, fuel: gasolina}",
+    "motor": { "versao": 2.0, "fuel": "gasolina" },
     "ano": 2020,
     "cor": "azul",
     "placa": "HLJ-4638",
@@ -74,7 +74,7 @@
   {
     "marca": "Honda",
     "modelo": "excepteur Turbo",
-    "motor": "{versao: 2.0, fuel: gasolina}",
+    "motor": { "versao": 2.0, "fuel": "gasolina" },
     "ano": 2020,
     "cor": "verde",
     "placa": "HLJ-4638",
@@ -92,7 +92,7 @@
   {
     "marca": "Renault",
     "modelo": "aute Turbo",
-    "motor": "{versao: 1.6, fuel: flex}",
+    "motor": { "versao": 1.6, "fuel": "flex" },
     "ano": 2019,
     "cor": "preto",
     "placa": "HLJ-4638",
@@ -110,7 +110,7 @@
   {
     "marca": "Mitsubishi",
     "modelo": "excepteur Turbo",
-    "motor": "{versao: 1.8, fuel: gasolina}",
+    "motor": { "versao": 1.8, "fuel": "gasolina" },
     "ano": 2014,
     "cor": "vermelho",
     "placa": "HLJ-4638",
@@ -128,7 +128,7 @@
   {
     "marca": "Renault",
     "modelo": "ullamco Turbo",
-    "motor": "{versao: 1.8, fuel: gasolina}",
+    "motor": { "versao": 1.8, "fuel": "gasolina" },
     "ano": 2014,
     "cor": "branco",
     "placa": "HLJ-4638",
@@ -146,7 +146,7 @@
   {
     "marca": "Fiat",
     "modelo": "duis Turbo",
-    "motor": "{versao: 1.5, fuel: flex}",
+    "motor": { "versao": 1.5, "fuel": "flex" },
     "ano": 2020,
     "cor": "preto",
     "placa": "HLJ-4638",
@@ -164,7 +164,7 @@
   {
     "marca": "Bmw",
     "modelo": "ex Turbo",
-    "motor": "{versao: 2.0, fuel: gasolina}",
+    "motor": { "versao": 2.0, "fuel": "gasolina" },
     "ano": 2016,
     "cor": "verde",
     "placa": "HLJ-4638",
@@ -182,7 +182,7 @@
   {
     "marca": "Bmw",
     "modelo": "amet Turbo",
-    "motor": "{versao: 1.5, fuel: flex}",
+    "motor": { "versao": 1.5, "fuel": "flex" },
     "ano": 2015,
     "cor": "azul",
     "placa": "HLJ-4638",
@@ -200,7 +200,7 @@
   {
     "marca": "Fiat",
     "modelo": "anim Turbo",
-    "motor": "{versao: 2.0, fuel: flex}",
+    "motor": { "versao": 2.0, "fuel": "flex" },
     "ano": 2018,
     "cor": "azul",
     "placa": "HLJ-4638",
@@ -218,7 +218,7 @@
   {
     "marca": "Audi",
     "modelo": "aliquip Turbo",
-    "motor": "{versao: 1.2, fuel: flex}",
+    "motor": {"versao": 1.2, "fuel": "flex"},
     "ano": 2017,
     "cor": "azul",
     "placa": "HLJ-4638",
@@ -236,7 +236,7 @@
   {
     "marca": "Renault",
     "modelo": "occaecat Turbo",
-    "motor": "{versao: 1.0, fuel: flex}",
+    "motor": { "versao": 1.0, "fuel": "flex" },
     "ano": 2021,
     "cor": "preto",
     "placa": "HLJ-4638",
@@ -254,7 +254,7 @@
   {
     "marca": "Ford",
     "modelo": "deserunt Turbo",
-    "motor": "{versao: 1.8, fuel: flex}",
+    "motor": { "versao": 1.8, "fuel": "flex" },
     "ano": 2020,
     "cor": "vermelho",
     "placa": "HLJ-4638",
