@@ -8,7 +8,7 @@ exports.authorize = function (role) {
       return next(
         new ErrorResponse("Not authenticated to access this route", null, 401)
       );
-    let user = await User.findOne({ _id: req.params.userId }).exec();
+    let user = await User.findOne({ _id: req.user }).exec();
 
     if (!user) return next(new ErrorResponse("User not found", null, 400));
     let { role: authRole } = await User.findOne({ _id: req.user })
@@ -21,11 +21,7 @@ exports.authorize = function (role) {
         new ErrorResponse("Not authorized to access this route", null, 401)
       );
 
-    if (
-      authRole == "usuario" &&
-      req.params.userId == user.id.toString() &&
-      req.method == "PUT"
-    ) {
+    if (authRole == "usuario" && req.method == "PUT") {
       return next();
     } else if (authRole == "admin") {
       return next();

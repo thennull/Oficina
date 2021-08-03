@@ -16,8 +16,10 @@ router.route("/").get(filterResults, getAllCarros);
 
 router.route("/:carroId").get(getOneCarro);
 
-// route.use(privateRoute, authorize(['usuario', 'admin']));
+router.use(privateRoute, authorize(["usuario", "admin"]));
 
-router.route("/carro/:carroId").post(postCarro).put(putCarro).delete(delCarro);
+router.post("/carro", postCarro);
+
+router.route("/carro/:carroId").put(putCarro).delete(delCarro);
 
 module.exports = router;

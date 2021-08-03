@@ -55,13 +55,19 @@ exports.getAllCarros = asyncHandler(async function (req, res, next) {
   });
 });
 
-// Desc Fetch all carros
+// Desc Fetch one carro
 // Method GET
 // Access Public
 
 exports.getOneCarro = asyncHandler(async function (req, res, next) {
-  let id = req.params.carroId;
-  let query = await Carro.findOne({ _id: id })
+  let id = req.params.carroId,
+    query = undefined;
+  if (id.match(/^[0-9a-zA-Z]{24}$/)) {
+    query = Carro.findOne({ _id: id });
+  } else {
+    return next(new ErrorResponse("Invalid search term", null, 400));
+  }
+  query = await query
     .populate({ path: "client", select: "name email" })
     .lean()
     .exec();
@@ -96,6 +102,9 @@ exports.putCarro = asyncHandler(async function (req, res, next) {
     .lean()
     .exec();
 
+  if (!carro)
+    return next(new ErrorResponse("Could not update ID: " + id, null, 400));
+
   res.status(200).json({
     success: true,
     data: carro,
@@ -106,10 +115,41 @@ exports.putCarro = asyncHandler(async function (req, res, next) {
 // Method POST
 // Access Private
 
-exports.postCarro = asyncHandler(async function (req, res, next) {});
+exports.postCarro = asyncHandler(async function (req, res, next) {
+  let body = { ...req.body };
+  if (!Object.keys(body) > 0)
+    return next(
+      new ErrorResponse("Please provide data to create carro", null, 400)
+    );
+  if (await Carro.findOne({ placa: body.placa }).exec())
+    return next(
+      new ErrorResponse(`Carro already on database: ${body.placa}`, null, 400)
+    );
+
+  let carro = await Carro.create(body);
+  res.status(200).json({
+    success: true,
+    data: carro,
+  });
+});
 
 // Desc Delete carro
 // Method DELETE
 // Access Private
 
-exports.delCarro = asyncHandler(async function (req, res, next) {});
+exports.delCarro = asyncHandler(async function (req, res, next) {
+  let id = req.params.carroId;
+  if (!id.match(/^[0-9a-zA-Z]{24}$/)) {
+    return next(new ErrorResponse("Invalid ID: " + id, null, 400));
+  }
+  let carro = await Carro.findById({ _id: id }).exec();
+  if (!carro) {
+    return next(new ErrorResponse(`Could not find Id: ${id}`, null, 404));
+  }
+  await carro.remove();
+
+  res.status(200).json({
+    success: true,
+    data: {},
+  });
+});
