@@ -11,12 +11,17 @@ var ManutSchema = new mongoose.Schema({
   client: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
-    required: [true, "Insira um nome de cliente"],
+    required: [true, "Insira um ID de cliente"],
   },
   employee: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
-    required: [true, "Insira um nome de funcionario"],
+    required: [true, "Insira um ID de funcionario"],
+  },
+  carro: {
+    type: mongoose.Schema.ObjectId,
+    ref: "Carro",
+    required: [true, "Insira um ID do veiculo"],
   },
   createdAt: {
     type: Date,

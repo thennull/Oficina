@@ -4,14 +4,18 @@ var ProdutoSchema = new mongoose.Schema({
   codigo: {
     type: Number,
     required: [true, "Insira o codigo do produto"],
+    unique: true,
   },
   desc: {
     type: String,
-    maxLength: 40,
+    maxLength: 280,
   },
   name: {
     type: String,
     maxLength: 20,
+  },
+  marca: {
+    type: String,
   },
   valor: {
     type: Number,

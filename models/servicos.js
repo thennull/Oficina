@@ -3,10 +3,12 @@ const mongoose = require("mongoose");
 var ServicoSchema = new mongoose.Schema({
   codigo: {
     type: Number,
+    required: true,
+    unique: true,
   },
   desc: {
     type: String,
-    maxLength: 30,
+    maxLength: 280,
     required: [true, "Insira uma descrição de serviço"],
   },
   valor: {

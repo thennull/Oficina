@@ -1,6 +1,8 @@
 const User = require("../models/users");
 const Carro = require("../models/carros");
 const Manutencao = require("../models/manutencao");
+const Servico = require("../models/servicos");
+const Produto = require("../models/produtos");
 const dotenv = require("dotenv");
 const database = require("../middlewares/database");
 const path = require("path");
@@ -19,6 +21,8 @@ var models = {
   "users.json": User,
   "carros.json": Carro,
   "manutencao.json": Manutencao,
+  "servicos.json": Servico,
+  "produtos.json": Produto,
 };
 
 // Load path
