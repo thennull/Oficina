@@ -3,7 +3,6 @@ const Carro = require("../models/carros");
 const ErrorResponse = require("../utils/ErrorResponse");
 const { asyncHandler } = require("../utils/asyncHandler");
 const crypto = require("crypto");
-const { token } = require("morgan");
 
 // Desc fetch all users
 // Method GET

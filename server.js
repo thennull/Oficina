@@ -14,6 +14,7 @@ const database = require("./middlewares/database");
 const { errorDefault } = require("./middlewares/errorHandler");
 const userRoutes = require("./routes/users");
 const carroRoutes = require("./routes/carros");
+const servicoRoutes = require("./routes/servicos");
 
 // Environment
 
@@ -35,7 +36,7 @@ app.use(urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookies());
 
-// Seguranca - HTTP headers, CORS, mongoDB, Request limit
+// Security - HTTP headers, CORS, mongoDB, Request limit
 
 app.disable("x-powered-by");
 app.use(sanitize());
@@ -59,6 +60,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/carros", carroRoutes);
+app.use("/api/v1/servicos", servicoRoutes);
 
 // Default Error handler
 
