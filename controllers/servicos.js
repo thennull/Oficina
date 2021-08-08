@@ -76,6 +76,8 @@ exports.updateServico = asyncHandler(async function (req, res, next) {
   let body = req.body,
     id = req.params.servId;
 
+  if (body.codigo) delete body.codigo;
+
   if (!id.match(/^[0-9a-zA-Z]{24}$/))
     return next(new ErrorResponse(`Invalid ID: ${id}`, null, 400));
 
@@ -99,10 +101,45 @@ exports.updateServico = asyncHandler(async function (req, res, next) {
 // Method POST
 // Access Private
 
-exports.createServico = asyncHandler(async function (req, res, next) {});
+exports.createServico = asyncHandler(async function (req, res, next) {
+  let body = req.body;
+
+  let [{ codigo }] = await Servico.find({})
+    .select("codigo")
+    .sort({ codigo: -1 })
+    .limit(1)
+    .exec();
+
+  body.codigo = codigo + 1;
+
+  let serv = await Servico.create(body);
+  if (!serv)
+    return next(new ErrorResponse("Could not create that servico"), null, 400);
+
+  res.status(200).json({
+    success: true,
+    data: serv,
+  });
+});
 
 // Desc Delete servico
 // Method DELETE
 // Access Private
 
-exports.deleteServico = asyncHandler(async function (req, res, next) {});
+exports.deleteServico = asyncHandler(async function (req, res, next) {
+  let id = req.params.servId;
+  if (!id.match(/^[a-z-A-Z0-9]{24}$/))
+    return next(new ErrorResponse(`Could no find id: ${id}`, null, 404));
+
+  let serv = await Servico.findById({ _id: id }).exec();
+
+  if (!serv)
+    return next(new ErrorResponse(`Could not find servico: ${id}`, null, 400));
+
+  await serv.remove();
+
+  res.status(200).json({
+    success: true,
+    data: {},
+  });
+});
