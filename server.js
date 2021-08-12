@@ -15,6 +15,7 @@ const { errorDefault } = require("./middlewares/errorHandler");
 const userRoutes = require("./routes/users");
 const carroRoutes = require("./routes/carros");
 const servicoRoutes = require("./routes/servicos");
+const produtoRoutes = require("./routes/produtos");
 
 // Environment
 
@@ -61,6 +62,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/carros", carroRoutes);
 app.use("/api/v1/servicos", servicoRoutes);
+app.use("/api/v1/produtos", produtoRoutes);
 
 // Default Error handler
 
