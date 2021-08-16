@@ -84,23 +84,22 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Sobre o Projeto
 A idéia do projeto surgiu a partir da necessidade de uma oficina da cidade de Itabira, em organizar suas ordens de serviço, clientes, serviços e produtos de uma maneira consolidada e com uma base de dados local através de um sistema que pudesse otimizar o processo, gerar histórico, relatórios, envio de emails e etc. Uma completa modernização do processo que anteriormente era manual. No projeto original a base de dados está em PostgreSQL além de outras pequenas diferenças que por motivos óbvios não estão aqui. Neste repositório está um sistema backend completo conforme descrito acima, porém simplificado em relação ao original utilizado no cliente, como por exemplo a base de dados, que esta em MongoDB aqui.
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Primeiros Passos
 
-To get a local copy up and running follow these simple steps.
+Para ter uma cópia local deste repositório, faça conforme abaixo:
 
-### Prerequisites
+### Prerequisitos
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
   ```
 
-### Installation
+### Instalação
 
 1. Clone the repo
    ```sh
@@ -114,24 +113,23 @@ This is an example of how to list things you need to use the software and how to
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Como utilizar
 
-Como usar:
 Você vai precisar que seu ambiente tenha instalado: Node.JS >= 12, MongoDB = 3.6.8, npm = 7.19.1 e o git.
-Depois que realizar o clone do repositório conforme descrito em "Installation", basta realizar o start do server:
+Depois que realizar o clone do repositório conforme descrito em "Instalação", basta realizar o start do server:
 ```sh
-node start
+npm start
 ```
 Isso vai rodar a versão de produção do ambiente.
 <!-- ROADMAP -->
-## Roadmap
+## Descrição 
 
 It has not yet been done! Waiting for updates.... 
 
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## Para contribuir
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
