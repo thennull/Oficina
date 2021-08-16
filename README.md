@@ -39,6 +39,7 @@
 
   <p align="center">
     Uma API REST para criação de ordens de serviço, onde a base de dados está em mongoDB bem como o restante da API está em express. Neste ambiente é possível cadastrar clientes, funcinários e administradores. A authenticação dos usuários é realizada via token JWT (client side token authentication).
+  OBS: Dentro do código eu utilizo referências em Inglês e alguns comentários em Inglês. Primeiro por que eu quero... kidding! Tenho este hábito em projetos onde eu sou o único responsável, escrevo e leio em Inglês sem problema algum, acho mais simples e direto e muitas vezes less typing!
     <br />
     <br />
     <a href="https://github.com/thennull/Oficina"><strong>Explore the docs »</strong></a>
