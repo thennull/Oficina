@@ -116,9 +116,13 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-It has not yet been done! Waiting for updates.... 
-
-
+Como usar:
+Você vai precisar que seu ambiente tenha instalado: Node.JS >= 12, MongoDB = 3.6.8, npm = 7.19.1 e o git.
+Depois que realizar o clone do repositório conforme descrito em "Installation", basta realizar o start do server:
+```sh
+node start
+```
+Isso vai rodar a versão de produção do ambiente.
 <!-- ROADMAP -->
 ## Roadmap
 
