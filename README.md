@@ -55,34 +55,6 @@
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## Sobre o Projeto
 A idéia do projeto surgiu a partir da necessidade de uma oficina da cidade de Itabira, em organizar suas ordens de serviço, clientes, serviços e produtos de uma maneira consolidada e com uma base de dados local através de um sistema que pudesse otimizar o processo, gerar histórico, relatórios, envio de emails e etc. Uma completa modernização do processo que anteriormente era manual. No projeto original a base de dados está em PostgreSQL além de outras pequenas diferenças que por motivos óbvios não estão aqui. Neste repositório está um sistema backend completo conforme descrito acima, porém simplificado em relação ao original utilizado no cliente, como por exemplo a base de dados, que esta em MongoDB aqui.
