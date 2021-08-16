@@ -123,9 +123,22 @@ npm start
 Isso vai rodar a versão de produção do ambiente.
 <!-- ROADMAP -->
 ## Descrição 
+Por se tratar de uma api REST você terá os seguintes pontos de entrada via HTTP:
 
-It has not yet been done! Waiting for updates.... 
+```sh
+/api/v1/servicos
+/api/v1/produtos
+/api/v1/users
+/api/v1/carros
+/api/v1/manutencoes
+```
+Você deve alterar a porta onde seu server vai ouvir por conexões e seu hostname no arquivo:
+config/config.env
 
+```sh
+PORT=3000
+SERVER=http://localhost
+```
 
 
 <!-- CONTRIBUTING -->
