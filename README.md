@@ -38,7 +38,7 @@
   <h3 align="center">Oficina</h3>
 
   <p align="center">
-    Uma API REST para criação de ordens de serviço. A base de dados está em mongoDB bem como o restante da API está em express. Neste ambiente é possível cadastrar clientes, funcinários e administradores. A authenticação dos usuários é realizada via token JWT (client side token authentication).
+    Uma API REST para criação de ordens de serviço, onde a base de dados está em mongoDB bem como o restante da API está em express. Neste ambiente é possível cadastrar clientes, funcinários e administradores. A authenticação dos usuários é realizada via token JWT (client side token authentication).
     <br />
     <br />
     <a href="https://github.com/thennull/Oficina"><strong>Explore the docs »</strong></a>
@@ -84,9 +84,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-A idéia do projeto surgiu a partir da necessidade de uma oficina da cidade de Itabira, em organizar suas ordens de serviço, clientes, serviços e produtos de uma maneira consolidade em base de dados, através de um sistema que pudessa otimizar o processo, gerar histórico, relatórios, envio de emails e etc. Uma completa modernização do processo que anteriormente era manual. No projeto original a base de dados está em PostgreSQL além de oputras diferenças que por motivos óbvios não estão aqui. Neste repositírio está um sistema backend completo conforme descrito acima, porém simplificado em relação ao original utilizado no cliente.
+A idéia do projeto surgiu a partir da necessidade de uma oficina da cidade de Itabira, em organizar suas ordens de serviço, clientes, serviços e produtos de uma maneira consolidada e com uma base de dados local através de um sistema que pudesse otimizar o processo, gerar histórico, relatórios, envio de emails e etc. Uma completa modernização do processo que anteriormente era manual. No projeto original a base de dados está em PostgreSQL além de outras pequenas diferenças que por motivos óbvios não estão aqui. Neste repositório está um sistema backend completo conforme descrito acima, porém simplificado em relação ao original utilizado no cliente, como por exemplo a base de dados, que esta em MongoDB aqui.
 
-Under Development! Waiting for updates....
 <!-- GETTING STARTED -->
 ## Getting Started
 
