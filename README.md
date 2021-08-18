@@ -38,7 +38,8 @@
   <h3 align="center">Oficina</h3>
 
   <p align="center">
-    Under Development! Waiting for updates....
+    Uma API REST para criação de ordens de serviço, onde a base de dados está em mongoDB bem como o restante da API está em express. Neste ambiente é possível cadastrar clientes, funcinários e administradores. A authenticação dos usuários é realizada via token JWT (client side token authentication).
+  OBS: Dentro do código eu utilizo referências em Inglês e alguns comentários em Inglês. Primeiro por que eu quero... kidding! Tenho este hábito em projetos onde eu sou o único responsável, escrevo e leio em Inglês sem problema algum, acho mais simples e direto e muitas vezes less typing!
     <br />
     <br />
     <a href="https://github.com/thennull/Oficina"><strong>Explore the docs »</strong></a>
@@ -54,53 +55,23 @@
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Sobre o Projeto
+A idéia do projeto surgiu a partir da necessidade de uma oficina da cidade de Itabira, em organizar suas ordens de serviço, clientes, serviços e produtos de uma maneira consolidada e com uma base de dados local através de um sistema que pudesse otimizar o processo, gerar histórico, relatórios, envio de emails e etc. Uma completa modernização do processo que anteriormente era manual. No projeto original a base de dados está em PostgreSQL além de outras pequenas diferenças que por motivos óbvios não estão aqui. Neste repositório está um sistema backend completo conforme descrito acima, porém simplificado em relação ao original utilizado no cliente, como por exemplo a base de dados, que esta em MongoDB aqui.
 
-
-Under Development! Waiting for updates....
 <!-- GETTING STARTED -->
-## Getting Started
+## Primeiros Passos
 
-To get a local copy up and running follow these simple steps.
+Para ter uma cópia local deste repositório, faça conforme abaixo:
 
-### Prerequisites
+### Prerequisitos
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
   ```
 
-### Installation
+### Instalação
 
 1. Clone the repo
    ```sh
@@ -114,29 +85,35 @@ This is an example of how to list things you need to use the software and how to
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Como utilizar
 
-It has not yet been done! Waiting for updates.... 
-
-
+Você vai precisar que seu ambiente tenha instalado: Node.JS >= 12, MongoDB = 3.6.8, npm = 7.19.1 e o git.
+Depois que realizar o clone do repositório conforme descrito em "Instalação", basta realizar o start do server:
+```sh
+npm start
+```
+Isso vai rodar a versão de produção do ambiente.
 <!-- ROADMAP -->
-## Roadmap
+## Descrição 
+Por se tratar de uma api REST você terá os seguintes pontos de entrada via HTTP:
 
-It has not yet been done! Waiting for updates.... 
+```sh
+/api/v1/servicos
+/api/v1/produtos
+/api/v1/users
+/api/v1/carros
+/api/v1/manutencoes
+```
+Você deve alterar a porta onde seu server vai ouvir por conexões e seu hostname no arquivo:
+config/config.env
 
+```sh
+PORT=3000
+SERVER=http://localhost
+```
 
 
 <!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 
 
 <!-- LICENSE -->
