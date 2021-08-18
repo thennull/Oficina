@@ -8,6 +8,8 @@ exports.errorDefault = async function (error, req, res, next) {
     failure.reason = "Token Expired - not allowed to access!";
   }
 
+  console.error(error);
+
   res.status(failure.statusCode || 500).json({
     success: false,
     error: failure.reason || "internal Error",
