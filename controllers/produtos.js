@@ -79,3 +79,47 @@ exports.postProduto = asyncHandler(async function (req, res, next) {
     data: run,
   });
 });
+
+// Desc Update a Produto
+// Method PUT
+// Access Private
+
+exports.putProduto = asyncHandler(async function (req, res, next) {
+  let id = req.params.prodId;
+  let body = { ...req.body };
+  if (body.codigo) delete body.codigo;
+
+  let prod = await Produto.findByIdAndUpdate(id, body, {
+    new: true,
+    runValidators: true,
+  })
+    .lean()
+    .exec();
+
+  if (!prod)
+    return next(new ErrorResponse("Could not find produto: " + id, null, 400));
+
+  res.status(200).json({
+    success: true,
+    data: prod,
+  });
+});
+
+// Desc Delete a Produto
+// Method DELETE
+// Access Private
+
+exports.delProduto = asyncHandler(async function (req, res, next) {
+  let id = req.params.prodId;
+  let prod = await Produto.findById(id).exec();
+
+  if (!prod)
+    return next(new ErrorResponse("Could not find produto: " + id, null, 404));
+
+  await prod.remove();
+
+  res.status(200).json({
+    success: true,
+    data: {},
+  });
+});
