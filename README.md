@@ -109,7 +109,14 @@ config/config.env
 PORT=3000
 SERVER=http://localhost
 ```
+Para importar os dados utilizados no projeto, utilize o script abaixo:
 
+```sh
+cd utils/
+node mongoImport.js --create
+```
+
+Obs: Este script foi criado para ser uma forma simples de importar e deletar toda a base durante o desenvolvimento. 
 
 <!-- CONTRIBUTING -->
 
