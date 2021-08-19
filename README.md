@@ -42,11 +42,9 @@
   OBS: Dentro do código eu utilizo referências em Inglês e alguns comentários em Inglês. Primeiro por que eu quero... kidding! Tenho este hábito em projetos onde eu sou o único responsável, escrevo e leio em Inglês sem problema algum, acho mais simples e direto e muitas vezes less typing!
     <br />
     <br />
-    <a href="https://github.com/thennull/Oficina"><strong>Explore the docs »</strong></a>
+    <a href="https://documenter.getpostman.com/view/16421781/TzzBpvki"><strong>Veja os docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/thennull/Oficina">View Demo</a>
-    ·
     <a href="https://github.com/thennull/Oficina/issues">Report Bug</a>
     ·
     <a href="https://github.com/thennull/Oficina/issues">Request Feature</a>
