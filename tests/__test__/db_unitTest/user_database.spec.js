@@ -2,7 +2,7 @@ const { expect } = require("@jest/globals");
 
 var { user } = global.servData;
 
-var { User, Carro, Produto, Servico } = global.models;
+var { User } = global.models;
 
 describe("User model interations", function () {
   var id = global.newId();
@@ -44,7 +44,7 @@ describe("User model interations", function () {
     expect(response.role).toBe(role);
   });
 
-  test("delete a user", async function () {
+  test("Delete a user", async function () {
     await User.deleteOne({ _id: id }).exec();
 
     expect(await User.countDocuments()).toBe(0);
