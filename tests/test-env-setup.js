@@ -21,7 +21,7 @@ global.servData = {
     name: "Test User",
     email: "test@gmail.com",
     address: "Rua Santinho Linhares 159, Itabira, Minas Gerais 35901, BR",
-    phone: "21975176456",
+    phone: "2197599956",
   },
 };
 
