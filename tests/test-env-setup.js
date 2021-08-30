@@ -3,6 +3,7 @@ const User = require("../models/users");
 const Carro = require("../models/carros");
 const Produto = require("../models/produtos");
 const Servico = require("../models/servicos");
+const start = require("./__test__/serverTest");
 const _ = require("lodash");
 
 global.newId = function () {
@@ -10,19 +11,10 @@ global.newId = function () {
 };
 
 global.models = {
-  User,
   Carro,
+  User,
   Produto,
   Servico,
-};
-
-global.servData = {
-  user: {
-    name: "Test User",
-    email: "test@gmail.com",
-    address: "Rua Santinho Linhares 159, Itabira, Minas Gerais 35901, BR",
-    phone: "2197599956",
-  },
 };
 
 var remove = async function (collection) {
@@ -49,6 +41,8 @@ beforeAll(async function () {
           return remove(value);
         })
       );
+
+      start.listen(4000);
     }
   } catch (error) {
     console.error(error);
@@ -58,4 +52,5 @@ beforeAll(async function () {
 
 afterAll(async function () {
   await mongoose.disconnect();
+  start.close();
 });
