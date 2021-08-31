@@ -10,8 +10,6 @@
 *** github_username, repo_name, twitter_handle, email, project_title, project_description
 -->
 
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -20,13 +18,12 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![thennull][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -51,20 +48,21 @@
   </p>
 </p>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## Sobre o Projeto
+
 A idéia do projeto surgiu a partir da necessidade de uma oficina da cidade de Itabira, em organizar suas ordens de serviço, clientes, serviços e produtos de uma maneira consolidada e com uma base de dados local através de um sistema que pudesse otimizar o processo, gerar histórico, relatórios, envio de emails e etc. Uma completa modernização do processo que anteriormente era manual. No projeto original a base de dados está em PostgreSQL além de outras pequenas diferenças que por motivos óbvios não estão aqui. Neste repositório está um sistema backend completo conforme descrito acima, porém simplificado em relação ao original utilizado no cliente, como por exemplo a base de dados, que esta em MongoDB aqui.
 
 <!-- GETTING STARTED -->
+
 ## Primeiros Passos
 
 Para ter uma cópia local deste repositório, faça conforme abaixo:
 
 ### Prerequisitos
 
-* npm
+- npm
   ```sh
   npm install npm@latest -g
   ```
@@ -80,19 +78,23 @@ Para ter uma cópia local deste repositório, faça conforme abaixo:
    npm install
    ```
 
-
-
 <!-- USAGE EXAMPLES -->
+
 ## Como utilizar
 
 Você vai precisar que seu ambiente tenha instalado: Node.JS >= 12, MongoDB = 3.6.8, npm = 7.19.1 e o git.
 Depois que realizar o clone do repositório conforme descrito em "Instalação", basta realizar o start do server:
+
 ```sh
 npm start
 ```
+
 Isso vai rodar a versão de produção do ambiente.
+
 <!-- ROADMAP -->
-## Descrição 
+
+## Descrição
+
 Por se tratar de uma api REST você terá os seguintes pontos de entrada via HTTP:
 
 ```sh
@@ -102,6 +104,7 @@ Por se tratar de uma api REST você terá os seguintes pontos de entrada via HTT
 /api/v1/carros
 /api/v1/manutencoes
 ```
+
 Você deve alterar a porta onde seu server vai ouvir por conexões e seu hostname no arquivo:
 config/config.env
 
@@ -109,6 +112,7 @@ config/config.env
 PORT=3000
 SERVER=http://localhost
 ```
+
 Para importar os dados utilizados no projeto, utilize o script abaixo:
 
 ```sh
@@ -116,29 +120,27 @@ cd utils/
 node mongoImport.js --create
 ```
 
-Obs: Este script foi criado para ser uma forma simples de importar e deletar toda a base durante o desenvolvimento. 
+Obs: Este script foi criado para ser uma forma simples de importar e deletar toda a base durante o desenvolvimento.
 
 <!-- CONTRIBUTING -->
 
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Marcio Lage - [@thennull](https://twitter.com/thennull) - marcin.lage@gmail.com
 
 Project Link: [https://github.com/thennull/Oficina](https://github.com/github_username/repo_name)
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/thennull/Oficina.svg?style=for-the-badge
 [contributors-url]: https://github.com/thennull/Oficina/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/thennull/repo.svg?style=for-the-badge
