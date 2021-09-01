@@ -18,7 +18,7 @@ const produtoRoutes = require("../../routes/produtos");
 
 // Environment
 
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: "../../config/config.env" });
 
 var app = express();
 
