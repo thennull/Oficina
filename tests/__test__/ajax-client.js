@@ -3,7 +3,7 @@ const { filterResults } = require("../../middlewares/advancedFilter");
 
 // Users
 
-var url = "http://localhost:4000/";
+var url = "http://localhost:4000/api/v1/";
 
 const user = {
   name: "Test User",
