@@ -49,10 +49,22 @@ var createOne = async function (endPoint, data) {
   return await result.json();
 };
 
+var login = async function (endPoint, data) {
+  let result = await fetch(url + endPoint, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (result.status == 200)
+    global.cookie = result.headers.get("set-cookie")?.split(";")[0];
+  return await result.json();
+};
+
 module.exports = {
   createOne,
   updateOne,
   deleteOne,
   fetchMany,
   fetchOne,
+  login,
 };
