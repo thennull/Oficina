@@ -48,3 +48,11 @@ var createOne = async function (endPoint, data) {
   });
   return await result.json();
 };
+
+module.exports = {
+  createOne,
+  updateOne,
+  deleteOne,
+  fetchMany,
+  fetchOne,
+};

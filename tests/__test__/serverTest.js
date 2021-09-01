@@ -20,9 +20,6 @@ const produtoRoutes = require("../../routes/produtos");
 
 dotenv.config({ path: "./config/config.env" });
 
-const PORT = 4000;
-const SERVER = "http://localhost";
-
 var app = express();
 
 // Middlewares

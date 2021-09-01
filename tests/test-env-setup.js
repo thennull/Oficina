@@ -3,7 +3,7 @@ const User = require("../models/users");
 const Carro = require("../models/carros");
 const Produto = require("../models/produtos");
 const Servico = require("../models/servicos");
-const start = require("./__test__/serverTest");
+const { start } = require("./__test__/serverTest");
 const _ = require("lodash");
 
 global.newId = function () {
@@ -16,6 +16,8 @@ global.models = {
   Produto,
   Servico,
 };
+
+var server = undefined;
 
 var remove = async function (collection) {
   try {
@@ -42,7 +44,7 @@ beforeAll(async function () {
         })
       );
 
-      start.listen(4000);
+      server = start.listen(4000);
     }
   } catch (error) {
     console.error(error);
@@ -52,5 +54,5 @@ beforeAll(async function () {
 
 afterAll(async function () {
   await mongoose.disconnect();
-  start.close();
+  server.close();
 });
