@@ -113,7 +113,7 @@ exports.updateUser = asyncHandler(async function (req, res, next) {
     .exec();
 
   if (!user)
-    return next(ErrorResponse(`could not update user: ${id}`, null, 500));
+    return next(ErrorResponse(`Could not update user: ${id}`, null, 500));
 
   res.status(200).json({
     success: true,
@@ -130,9 +130,10 @@ exports.deleteUser = asyncHandler(async function (req, res, next) {
   if (!id.match(/^[0-9a-fA-F]{24}$/))
     return next(ErrorResponse(`Invalid ID: ${id}`, null, 400));
 
-  let user = await User.findByIdAndDelete(id).exec();
+  let user = await User.deleteOne({ _id: id }).exec();
+
   if (!user)
-    return next(ErrorResponse(`could not update user: ${id}`, null, 404));
+    return next(ErrorResponse(`Could not delete user: ${id}`, null, 404));
 
   res.status(200).json({
     success: true,
