@@ -10,6 +10,8 @@ global.newId = function () {
   return mongoose.Types.ObjectId();
 };
 
+global.cookie = "";
+
 global.models = {
   Carro,
   User,
@@ -41,6 +43,12 @@ beforeAll(async function () {
       await Promise.all(
         _.map(mongoose.connection.collections, function (value) {
           return remove(value);
+        })
+      );
+
+      await Promise.all(
+        [Carro, User, Produto, Servico].map(function (model) {
+          return model.init();
         })
       );
 

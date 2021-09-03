@@ -19,6 +19,8 @@ var router = express.Router();
 
 router.route("/").get(filterResults, getUsers).post(postUser);
 
+router.route("/user/login").post(userLogin);
+
 router
   .route("/:userId")
   .get(getOneUser)
@@ -28,8 +30,6 @@ router
 router.route("/:userId/resetpassword").get(getResetLink);
 
 router.route("/:userId/:key").put(privateRoute, putPassword);
-
-router.route("/user/login").post(userLogin);
 
 router.route("/user/logoff").get(privateRoute, userLogoff);
 

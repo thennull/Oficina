@@ -1,4 +1,4 @@
-const { createOne, fetchOne } = require("../../ajax-client");
+const { createUser, fetchOne, updateUser } = require("../../ajax-client");
 
 var id = global.newId();
 
@@ -26,7 +26,7 @@ var locationFormatted = {
 
 describe("User Test Suite", function () {
   test("Create a User", async function () {
-    let result = await createOne("users", user);
+    let result = await createUser("users", user);
     expect(result).toEqual({
       success: true,
       data: {
@@ -39,5 +39,10 @@ describe("User Test Suite", function () {
   test("Validate mongoose location middleware", async function () {
     let result = await fetchOne("users/", id);
     expect(result.data.location).toEqual(locationFormatted);
+  });
+
+  test("Update a user", async function () {
+    let result = await updateUser("users/", id, { role: "client" });
+    expect(result.data.role).toBe("client");
   });
 });
