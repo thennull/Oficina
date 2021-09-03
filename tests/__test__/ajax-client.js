@@ -27,6 +27,7 @@ var updateUser = async function (endPoint, param, data) {
 var deleteUser = async function (endPoint, param) {
   let result = await fetch(url + endPoint + param, {
     method: "DELETE",
+    headers: { "content-type": "application/json" },
   });
   return await result.json();
 };

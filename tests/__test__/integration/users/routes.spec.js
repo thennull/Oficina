@@ -1,4 +1,9 @@
-const { createUser, fetchOne, updateUser } = require("../../ajax-client");
+const {
+  createUser,
+  fetchOne,
+  updateUser,
+  deleteUser,
+} = require("../../ajax-client");
 
 var id = global.newId();
 
@@ -44,5 +49,10 @@ describe("User Test Suite", function () {
   test("Update a user", async function () {
     let result = await updateUser("users/", id, { role: "client" });
     expect(result.data.role).toBe("client");
+  });
+
+  test("Delete a user", async function () {
+    let result = await deleteUser("users/", id);
+    expect(result.success).toBe(true);
   });
 });
