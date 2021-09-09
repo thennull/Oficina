@@ -1,3 +1,4 @@
+const logger = require("../../logger");
 const {
   createUser,
   fetchOne,
@@ -17,6 +18,12 @@ var user = {
   phone: "21 97999-999",
 };
 
+var mockUser = {
+  body: {
+    ...user,
+  },
+};
+
 var locationFormatted = {
   type: "Point",
   coordinates: [-43.23753, -19.64241],
@@ -29,9 +36,19 @@ var locationFormatted = {
   country: "BR",
 };
 
+beforeEach(function () {
+  jest.spyOn(logger, "logInfo");
+});
+
 describe("User Test Suite", function () {
   test("Create a User", async function () {
     let result = await createUser("users", user);
+    let [first] = logger.logInfo.mock.calls[0];
+
+    expect(logger.logInfo.mock.calls).toHaveLength(1);
+
+    expect(JSON.stringify(first)).toEqual(JSON.stringify(mockUser));
+
     expect(result).toEqual({
       success: true,
       data: {

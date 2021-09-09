@@ -3,6 +3,7 @@ const Carro = require("../models/carros");
 const ErrorResponse = require("../utils/ErrorResponse");
 const { asyncHandler } = require("../utils/asyncHandler");
 const crypto = require("crypto");
+const logger = require("../tests/__test__/logger");
 
 // Desc fetch all users
 // Method GET
@@ -65,6 +66,8 @@ exports.postUser = asyncHandler(async function (req, res, next) {
   if (!user) {
     return next(new ErrorResponse(`Could not create that user.`, null, 400));
   }
+
+  logger.logInfo({ body: req.body }, "Create a user parameter");
 
   res.status(200).json({
     success: true,
