@@ -5,7 +5,6 @@ const Produto = require("../models/produtos");
 const Servico = require("../models/servicos");
 const { start } = require("./__test__/serverTest");
 const _ = require("lodash");
-const { JsonWebTokenError } = require("jsonwebtoken");
 
 global.newId = function () {
   return mongoose.Types.ObjectId();

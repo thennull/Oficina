@@ -43,8 +43,8 @@ beforeEach(function () {
 describe("User Test Suite", function () {
   test("Create a User", async function () {
     let result = await createUser("users", user);
-    let [first] = logger.logInfo.mock.calls[0];
 
+    var [first] = logger.logInfo.mock.calls[0];
     expect(logger.logInfo.mock.calls).toHaveLength(1);
 
     expect(JSON.stringify(first)).toEqual(JSON.stringify(mockUser));

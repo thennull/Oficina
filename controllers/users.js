@@ -92,6 +92,9 @@ exports.getOneUser = asyncHandler(async function (req, res, next) {
         new ErrorResponse("Could not find any user with ID: " + id, null, 404)
       );
     }
+
+    logger.logInfo({ userId: id }, "Fetch one user parameter");
+
     res.status(200).json({
       success: true,
       data: user,
