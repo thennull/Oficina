@@ -37,7 +37,11 @@ var locationFormatted = {
 };
 
 beforeEach(function () {
-  jest.spyOn(logger, "logInfo");
+  return jest.spyOn(logger, "logInfo").mockImplementation(jest.fn);
+});
+
+afterEach(function () {
+  return logger.logInfo.mockClear();
 });
 
 describe("User Test Suite", function () {
